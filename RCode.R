@@ -14,9 +14,11 @@ testing_set = subset(dataset, split == FALSE)
 # Fitting Simple Linear Regression to the Training set
 linearregressor = lm(formula = AnnualSalary ~ YearsOfExperience,
                      data = training_set)
+summary(linearregressor)
 
 # Predicting the Test set results
 Y_pred = predict(linearregressor, newdata= testing_set)
+summary(Y_pred)
 
 install.packages('scales')
 library(scales)
